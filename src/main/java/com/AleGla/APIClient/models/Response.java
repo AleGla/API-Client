@@ -3,7 +3,9 @@ package com.AleGla.APIClient.models;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Response implements Serializable{
 
 
@@ -49,8 +51,5 @@ public class Response implements Serializable{
 		this.function = function;
 	}
 
-
-	
-	
-	
+		
 }

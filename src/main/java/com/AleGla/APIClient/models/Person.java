@@ -2,8 +2,10 @@ package com.AleGla.APIClient.models;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Person implements Serializable{
 
 
@@ -66,8 +68,8 @@ public class Person implements Serializable{
 		return DNI;
 	}
 
-	public void setDNI(String dNI) {
-		DNI = dNI;
+	public void setDNI(String DNI) {
+		this.DNI = DNI;
 	}
 
 	public String getNationality() {

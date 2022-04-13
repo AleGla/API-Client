@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ResponseByID {
+public class ResponseModifyPerson {
 	
 	
 	@JsonProperty("person")
@@ -75,6 +75,12 @@ public class ResponseByID {
 
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
+	}
+
+	@Override
+	public String toString() {
+		return "person=" + person + ", message=" + message + ", status=" + status + ", function="
+				+ function + ", errorCode=" + errorCode + ", errorMessage=" + errorMessage + "]";
 	}
 
 

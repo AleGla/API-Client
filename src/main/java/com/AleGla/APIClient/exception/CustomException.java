@@ -1,12 +1,13 @@
 package com.AleGla.APIClient.exception;
 
-
-import org.apache.logging.log4j.LogManager;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CustomException{
 
+	static Logger logger = LoggerFactory.getLogger(CustomException.class);
+	
 	@JsonProperty("ErrorMessage")
 	private String errorMessage;
 	
@@ -22,7 +23,7 @@ public class CustomException{
 			errorMessage = "The Person doesn't exists in the database".toString();
 			errorCode = "PEDB-0001".toString();			
 			exception = new ApiException(errorMessage, errorCode);
-			LogManager.getLogger().info(exception.toString());
+			logger.info(exception.toString());
 			return exception;
 	}
 	
@@ -30,7 +31,7 @@ public class CustomException{
 		errorMessage = "Are necessary all data of the person for be add to the person".toString();
 		errorCode = "PERQ-0001".toString();			
 		exception = new ApiException(errorMessage, errorCode);
-		LogManager.getLogger().info(exception.toString());
+		logger.info(exception.toString());
 		return exception;
 	
 	}
@@ -39,7 +40,7 @@ public class CustomException{
 		errorMessage = "Are necessary all data of the game for be add to the game".toString();
 		errorCode = "GARQ-0001".toString();			
 		exception = new ApiException(errorMessage, errorCode);
-		LogManager.getLogger().info(exception.toString());
+		logger.info(exception.toString());
 		return exception;
 	
 	}
@@ -48,7 +49,7 @@ public class CustomException{
 		errorMessage = "The game doesn't exists in the database".toString();
 		errorCode = "GADB-0001".toString();			
 		exception = new ApiException(errorMessage, errorCode);
-		LogManager.getLogger().info(exception.toString());
+		logger.info(exception.toString());
 		return exception;
 	}
 	
@@ -56,7 +57,7 @@ public class CustomException{
 		errorMessage = "Couldn't get information from database".toString();
 		errorCode = "PEDB-9999".toString();			
 		exception = new ApiException(errorMessage, errorCode);
-		LogManager.getLogger().info(exception.toString());
+		logger.info(exception.toString());
 		return exception;
 	}
 	
@@ -64,7 +65,7 @@ public class CustomException{
 		errorMessage = "Couldn't get information from database".toString();
 		errorCode = "GADB-9999".toString();			
 		exception = new ApiException(errorMessage, errorCode);
-		LogManager.getLogger().info(exception.toString());
+		logger.info(exception.toString());
 		return exception;
 	}
 	
